@@ -6,7 +6,7 @@ using namespace std;
 
 char input[1000001];
 int findIdx[1000001];
-
+ 
 int main() {
 	while (1) {
 		ios::sync_with_stdio(false);
