@@ -6,41 +6,37 @@ using namespace std;
 
 int N, M;
 
-pair<pair<int, int>, int> Album[101];
+pair<pair<int, int>, int> Album[101];//count time studentNumber
+int Ans[101];
 
 int main()
 {
 	cin >> N >> M;
-	bool isEmpty = true;
 	int count = 0;
-	int* Ans = new int[N];
+	int a;
 
 	for (int i = 0; i < M; i++)
 	{
-		if (!isEmpty)
-			sort(Album, Album + N);
-		int a;
+		if (count == N) sort(Album, Album + N);
 		cin >> a;
 
 		for (int j = 0; j < N; j++)
 		{
-			if (Album[j].second == NULL)// 앨범이 비어있다면
+			if (!Album[j].second)// 앨범이 비어있다면
 			{
 				Album[j].first.second = i;
 				Album[j].first.first = 1;
 				Album[j].second = a;
-				count += 1;
-				if (count == N)
-					isEmpty = false;
+				count++;
 				break;
 			}
-			if (Album[j].second == a)
+			else if (Album[j].second == a)
 			{
-				Album[j].first.second = i;
-				Album[j].first.first += 1;
+				Album[j].first.first++;
 				break;
 			}
-			if (j == N - 1 && !isEmpty) {
+			
+			if (j == N - 1 ) {
 				Album[0].second = a;
 				Album[0].first.first = 1;
 				Album[0].first.second = i;
@@ -48,7 +44,7 @@ int main()
 		}
 	}
 
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < N; i++)
 	{
 		Ans[i] = Album[i].second;
 
@@ -58,5 +54,5 @@ int main()
 	for (int i = 0; i < count; i++)
 		cout << Ans[i] << " ";
 
-
+	return 0;
 }
