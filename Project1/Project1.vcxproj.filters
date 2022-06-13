@@ -84,6 +84,21 @@
     <ClCompile Include="bj2294_greedydfs.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Pro_BattleShip.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="JOL4796_SQUARE.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="bj3055_BFS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="bj9252_LCS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="bj2098_TSP.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bj1103_DFS.h">
